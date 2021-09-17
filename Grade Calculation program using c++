@@ -2,44 +2,48 @@
 using namespace std;
 int main()
 {
-    int marks, ask_user;
+    int marks, ask_user, i;
 
     cout << "If your marks is:\n1. 90 and above\n2. Less then 90 and more than 80 and above\n3. Less then 80 and more than 70 and above\n4. Less than 70 and more then 60 and above\n5. Less than 60 and more then 50 and above\n6. Less than 50 and more than 40 amd above.\n7. Below 40 ......\n8. Exit this grade calculator.\n";
     cout << "Enter your choice: ";
     cin >> marks;
 
-    switch (marks)
+    if (marks > 0 || marks <= 8)
     {
-    case 1:
-        cout << "\nYOUR GRADE IS O - Outstanding";
-        break;
-    case 2:
-        cout << "\nYOUR GRADE IS E - Excellent";
-        break;
-    case 3:
-        cout << "\nYOUR GRADE IS A - Very good";
-        break;
-    case 4:
-        cout << "\nYOUR GRADE IS B - Good";
-        break;
-    case 5:
-        cout << "\nYOUR GRADE IS C - Fair";
-        break;
-    case 6:
-        cout << "\nYOUR GRADE IS D - Below Average";
-        break;
-    case 7:
-        cout << "\nYOUR GRADE IS F - Failed";
-        break;
-    case 8:
-        cout << "\n Do you want to exit the program? ";
-        cin >> ask_user;
-        if (ask_user == true)
+        switch (marks)
         {
-            exit(0);
+        case 1:
+            cout << "\nYOUR GRADE IS O - Outstanding";
+            break;
+        case 2:
+            cout << "\nYOUR GRADE IS E - Excellent";
+            break;
+        case 3:
+            cout << "\nYOUR GRADE IS A - Very good";
+            break;
+        case 4:
+            cout << "\nYOUR GRADE IS B - Good";
+            break;
+        case 5:
+            cout << "\nYOUR GRADE IS C - Fair";
+            break;
+        case 6:
+            cout << "\nYOUR GRADE IS D - Below Average";
+            break;
+        case 7:
+            cout << "\nYOUR GRADE IS F - Failed";
+            break;
+        case 8:
+            cout << "\n Do you want to exit the program? (true for y/false for n)";
+            cin >> ask_user;
+            if (ask_user == true)
+            {
+                exit(0);
+            }
         }
-        break;
-    default:
-        cout << "******************** INVALID NO ********************";
+    }
+    if(marks>8)
+    {
+        cout << "******************** INVALID INPUT ********************";
     }
 }
